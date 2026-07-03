@@ -6,7 +6,7 @@
 <title>AI 골프장 찾기</title>
 
 <!-- PWA -->
-<link rel="manifest" href="manifest.json">
+<link rel="manifest" href="/golf-app/manifest.json">
 <meta name="theme-color" content="#16A34A">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -768,7 +768,7 @@ function resetApp(){ state.plan=null; showScreen('inputScreen'); window.scrollTo
 // 서비스 워커 등록
 if('serviceWorker' in navigator){
   window.addEventListener('load', ()=>{
-    navigator.serviceWorker.register('/sw.js').catch(()=>{});
+    navigator.serviceWorker.register('/golf-app/sw.js', {scope: '/golf-app/'}).catch(()=>{});
   });
 }
 
